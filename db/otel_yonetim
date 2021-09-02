@@ -1,0 +1,219 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Anamakine: 127.0.0.1:3306
+-- Üretim Zamanı: 04 Ağu 2021, 16:37:49
+-- Sunucu sürümü: 5.7.31
+-- PHP Sürümü: 7.3.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Veritabanı: `otel_yonetim`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `ayarlar`
+--
+
+DROP TABLE IF EXISTS `ayarlar`;
+CREATE TABLE IF NOT EXISTS `ayarlar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  `metatitle` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  `metadesc` text COLLATE utf16_turkish_ci NOT NULL,
+  `metakey` text COLLATE utf16_turkish_ci NOT NULL,
+  `metaauthor` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  `metaowner` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  `metacopy` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  `logoyazisi` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  `twit` varchar(70) COLLATE utf16_turkish_ci NOT NULL,
+  `face` varchar(70) COLLATE utf16_turkish_ci NOT NULL,
+  `ints` varchar(70) COLLATE utf16_turkish_ci NOT NULL,
+  `telefonno` varchar(25) COLLATE utf16_turkish_ci NOT NULL,
+  `adres` varchar(150) COLLATE utf16_turkish_ci NOT NULL,
+  `mailadres` varchar(30) COLLATE utf16_turkish_ci NOT NULL,
+  `slogan` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  `referansbaslik` text COLLATE utf16_turkish_ci NOT NULL,
+  `filobaslik` text COLLATE utf16_turkish_ci NOT NULL,
+  `yorumbaslik` text COLLATE utf16_turkish_ci NOT NULL,
+  `iletisimbaslik` text COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `ayarlar`
+--
+
+INSERT INTO `ayarlar` (`id`, `title`, `metatitle`, `metadesc`, `metakey`, `metaauthor`, `metaowner`, `metacopy`, `logoyazisi`, `twit`, `face`, `ints`, `telefonno`, `adres`, `mailadres`, `slogan`, `referansbaslik`, `filobaslik`, `yorumbaslik`, `iletisimbaslik`) VALUES
+(1, 'Otel Yönetim', 'Otel Yönetim', 'En güzel odalar sizlerle', 'Havuz, Hamam, Spa, Sauna', 'Otel Yönetim TİC', 'Otel Yönetim TİC', '2021', 'Ertaş Otel Yönetim', 'http://localhost/projem/kurumsalsite', 'http://localhost/projem/kurumsalsite/', 'http://localhost/projem/kurumsalsite/', '+90 111 222 333', 'Karacaahmet mahallesi Türkmen Gold Neva Sitesi', 'ertsbasak6@gmail.com', 'Birbirinden konforlu odalar', 'Burada Referans bölümünün başlığı olacak', 'Burada Filo bölümünün başlığı olacak', 'Burada Yorum bölümünün başlığı olacak', 'Burada İletişim bölümünün başlığı olacak');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `filomuz`
+--
+
+DROP TABLE IF EXISTS `filomuz`;
+CREATE TABLE IF NOT EXISTS `filomuz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `resimyol` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `filomuz`
+--
+
+INSERT INTO `filomuz` (`id`, `resimyol`) VALUES
+(1, 'img/filo/1.jpeg'),
+(2, 'img/filo/2.jpeg'),
+(3, 'img/filo/3.jpeg'),
+(4, 'img/filo/4.jpeg'),
+(5, 'img/filo/5.jpeg'),
+(6, 'img/filo/6.jpeg'),
+(7, 'img/filo/7.jpeg'),
+(8, 'img/filo/8.jpeg'),
+(9, 'img/filo/9.jpeg'),
+(10, 'img/filo/10.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `hakkimizda`
+--
+
+DROP TABLE IF EXISTS `hakkimizda`;
+CREATE TABLE IF NOT EXISTS `hakkimizda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `baslik` varchar(150) COLLATE utf16_turkish_ci NOT NULL,
+  `icerik` text COLLATE utf16_turkish_ci NOT NULL,
+  `resim` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `hakkimizda`
+--
+
+INSERT INTO `hakkimizda` (`id`, `baslik`, `icerik`, `resim`) VALUES
+(1, 'Otel hakkında', 'Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında Otel hakkında', 'img/hakkimiz.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `hizmetler`
+--
+
+DROP TABLE IF EXISTS `hizmetler`;
+CREATE TABLE IF NOT EXISTS `hizmetler` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hizmetlerbaslik` varchar(200) COLLATE utf16_turkish_ci NOT NULL,
+  `baslik1` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  `icerik1` text COLLATE utf16_turkish_ci NOT NULL,
+  `baslik2` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  `icerik2` text COLLATE utf16_turkish_ci NOT NULL,
+  `baslik3` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  `icerik3` text COLLATE utf16_turkish_ci NOT NULL,
+  `baslik4` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  `icerik4` text COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `hizmetler`
+--
+
+INSERT INTO `hizmetler` (`id`, `hizmetlerbaslik`, `baslik1`, `icerik1`, `baslik2`, `icerik2`, `baslik3`, `icerik3`, `baslik4`, `icerik4`) VALUES
+(1, 'Yılların Vermiş olduğu güvenle', 'Başlık1', 'İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1', 'Başlık2', 'İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2', 'Başlık3', 'İçerik3 İçerik3 İçerik3 İçerik3 İçerik3 İçerik3 İçerik3', 'Başlık4', 'İçerik4 İçerik4 İçerik4 İçerik4 İçerik4 İçerik4 İçerik4 İçerik4 İçerik4');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `intro`
+--
+
+DROP TABLE IF EXISTS `intro`;
+CREATE TABLE IF NOT EXISTS `intro` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `resimyol` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `intro`
+--
+
+INSERT INTO `intro` (`id`, `resimyol`) VALUES
+(1, 'img/carousel/1.jpeg'),
+(2, 'img/carousel/2.jpeg'),
+(3, 'img/carousel/3.jpeg'),
+(4, 'img/carousel/4.jpeg'),
+(5, 'img/carousel/5.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `referanslar`
+--
+
+DROP TABLE IF EXISTS `referanslar`;
+CREATE TABLE IF NOT EXISTS `referanslar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `resimyol` varchar(40) COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `referanslar`
+--
+
+INSERT INTO `referanslar` (`id`, `resimyol`) VALUES
+(1, 'img/referans/ref1.png'),
+(2, 'img/referans/ref2.png'),
+(3, 'img/referans/ref3.png'),
+(4, 'img/referans/ref4.png'),
+(5, 'img/referans/ref5.png'),
+(6, 'img/referans/ref6.png'),
+(7, 'img/referans/ref7.png'),
+(8, 'img/referans/ref8.png');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `yorumlar`
+--
+
+DROP TABLE IF EXISTS `yorumlar`;
+CREATE TABLE IF NOT EXISTS `yorumlar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `icerik` text COLLATE utf16_turkish_ci NOT NULL,
+  `isim` varchar(50) COLLATE utf16_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf16 COLLATE=utf16_turkish_ci;
+
+--
+-- Tablo döküm verisi `yorumlar`
+--
+
+INSERT INTO `yorumlar` (`id`, `icerik`, `isim`) VALUES
+(1, ' İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1 İçerik1', 'Başak'),
+(2, 'İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2 İçerik2', 'Eda'),
+(3, 'İçerik3 İçerik3 İçerik3 İçerik3 İçerik3 İçerik3 İçerik3 İçerik3', 'Mete'),
+(4, 'İçerik4 İçerik4 İçerik4 İçerik4 İçerik4 İçerik4 İçerik4', 'Nur');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
