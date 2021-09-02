@@ -1,2 +1,3 @@
 # otel_tanitimveyonetim
-Otel Tanıtım
+Otel Tanıtım Sistemi
+Yeni gelecekler var
